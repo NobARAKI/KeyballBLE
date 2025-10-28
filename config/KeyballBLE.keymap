@@ -149,14 +149,14 @@
             >;
         };
 
-            SymbolNumber {
-                bindings = <
-    &kp EXCLAMATION    &kp JP_DQUOTE    &kp HASH         &kp DOLLAR      &kp PERCENT                         &kp JP_PLUS       &kp NUMBER_7       &kp NUMBER_8     &kp NUMBER_9      &kp JP_ASTERISK
-    &kp JP_AMPERSAND   &kp JP_QUOTE     &kp JP_EQUAL     &kp JP_CARET    &kp JP_YEN      &trans      &trans  &kp MINUS          &kp NUMBER_4       &kp NUMBER_5     &kp NUMBER_6     &kp SLASH
-    &kp JP_PLUS        &kp JP_TILDE     &kp JP_PIPE      &kp JP_AT       &kp JP_COLON    &trans      &trans  &NUMBER_0         &kp NUMBER_1       &kp NUMBER_2     &kp NUMBER_3      &kp JP_UNDERSCORE
-    &trans             &trans           &trans           &trans          &trans          &trans      &trans  &trans                                                                  &trans
-                >;
-            };
+        SymbolNumber {
+            bindings = <
+&kp EXCLAMATION    &kp JP_DQUOTE    &kp HASH         &kp DOLLAR      &kp PERCENT                         &kp JP_PLUS       &kp NUMBER_7       &kp NUMBER_8     &kp NUMBER_9      &kp JP_ASTERISK
+&kp JP_AMPERSAND   &kp JP_QUOTE     &kp JP_EQUAL     &kp JP_CARET    &kp JP_YEN      &trans      &trans  &kp MINUS          &kp NUMBER_4       &kp NUMBER_5     &kp NUMBER_6     &kp SLASH
+&kp JP_PLUS        &kp JP_TILDE     &kp JP_PIPE      &kp JP_AT       &kp JP_COLON    &trans      &trans  &kp NUMBER_0         &kp NUMBER_1       &kp NUMBER_2     &kp NUMBER_3      &kp JP_UNDERSCORE
+&trans             &trans           &trans           &trans          &trans          &trans      &trans  &trans                                                                  &trans
+            >;
+        };
 
     };
 };

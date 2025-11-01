@@ -100,7 +100,7 @@
 &trans  &trans  &trans  &trans  &trans  &trans      &trans   &kp F10  &kp JP_UNDERSCORE  &kp F2  &kp F3  &kp F9
 &trans  &trans  &trans  &trans  &trans  &trans      &trans   &trans                          &kp F10
             >;
-        };
+        }
 
         NUM {
             bindings = <

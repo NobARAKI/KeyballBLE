@@ -65,7 +65,7 @@
 
         // IRQピンを元の設定に戻す
         irq-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;  // D2 = P0.02
-
+motion-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW)>;
         automouse-layer = <4>;
         scroll-layers = <5>;
     };

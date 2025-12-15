@@ -25,7 +25,14 @@
         zephyr,axis-y = <INPUT_REL_Y>;
     };
 };
-
+&kscan0 {
+    col-gpios
+        = <&xiao_d 8 GPIO_ACTIVE_HIGH>
+        , <&xiao_d 9 GPIO_ACTIVE_HIGH>
+        , <&xiao_d 10 GPIO_ACTIVE_HIGH>
+        /* 必要な本数分、実際の配線に合わせて記述してください */
+        ;
+};
 /* 重要: トラックボールの入力をZMKに伝えるための設定を追加 */
 / {
     trackball_listener {

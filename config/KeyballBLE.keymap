@@ -85,8 +85,8 @@
         default_layer {
             bindings = <
 &lt_to_layer_0 6  Q             &kp W         &kp E         &kp R                          &kp T                                                                       &kp Y        &kp U  &kp I    &lt 5 O    &kp P
-&lt_to_layer_0 3 A  &kp S         &kp D         &kp F                          &kp G                   &mkp LCLK                        &kp BACKSLASH      &kp H        &kp J  &kp K      &kp L    &kp MINUS
-&mt LEFT_SHIFT Z  &kp X         &kp C         &kp V                          &kp B                   &mkp RCLK                        &kp RIGHT_BRACKET  &kp N        &kp M  &kp COMMA  &kp DOT  &kp SLASH
+&lt_to_layer_0 3 A  &kp S         &kp D         &kp F                          &kp G                   &mkp RCLK                        &kp BACKSLASH      &kp H        &kp J  &kp K      &kp L    &kp MINUS
+&mt LEFT_SHIFT Z  &kp X         &kp C         &kp V                          &kp B                   &mkp LCLK                        &kp RIGHT_BRACKET  &kp N        &kp M  &kp COMMA  &kp DOT  &kp SLASH
 &kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &lt_to_layer_0 7 INT_MUHENKAN  &mt LEFT_SHIFT SPACE  &lt_to_layer_0 3 INT_HENKAN      &kp BACKSPACE      &lt 1 ENTER                             &kp DEL
             >;
 
@@ -98,7 +98,7 @@
 &trans  &trans  &trans  &trans  &trans                       &kp F10  &kp F7  &kp F8  &kp F9  &kp JP_CARET
 &trans  &trans  &trans  &trans  &trans  &trans      &kp F13  &kp F11  &kp F4  &kp F5  &kp F6  &kp JP_TILDE
 &trans  &trans  &trans  &trans  &trans  &trans      &trans   &kp F12  &kp JP_UNDERSCORE  &kp F2  &kp F3  &kp JP_UNDERSCORE
-&trans  &trans  &trans  &trans  &trans  &trans      &trans   &trans                          &kp PSCRN
+&trans  &trans  &trans  &trans  &trans  &trans      &trans   &trans                          &kp JP_TILDE
             >;
         };
 

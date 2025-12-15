@@ -59,13 +59,12 @@
 
     trackball: trackball@0 {
         status = "okay";
-        compatible = "pixart,pmw3610";
+        compatible = "pixart,pmw3610-alt";
         reg = <0>;
         spi-max-frequency = <2000000>;
 
         // IRQピンを元の設定に戻す
         irq-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;  // D2 = P0.02
-motion-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW)>;
         automouse-layer = <4>;
         scroll-layers = <5>;
     };

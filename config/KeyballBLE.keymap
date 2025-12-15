@@ -160,7 +160,7 @@ default_layer {
 &kp JP_AMPERSAND   &kp JP_QUOTE     &kp JP_EQUAL     &kp JP_CARET    &kp JP_YEN      &trans      &trans  &kp MINUS          &kp NUMBER_4       &kp NUMBER_5     &kp NUMBER_6     &kp SLASH
 &kp JP_PLUS        &kp JP_TILDE     &kp JP_PIPE      &kp JP_AT       &kp JP_COLON    &trans      &trans  &kp NUMBER_0         &kp NUMBER_1       &kp NUMBER_2     &kp NUMBER_3      &kp JP_UNDERSCORE
 &trans             &trans           &trans           &trans          &trans          &trans      &trans  &trans                                                                  &trans
-            >;"
+            >;
         };
 
     };

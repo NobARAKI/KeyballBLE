@@ -6,7 +6,10 @@
 
 #include <dt-bindings/zmk/matrix_transform.h>
 #include "KeyballBLE.dtsi"
-#include <zephyr/dt-bindings/input/input-event-codes.h>
+
+&default_transform {
+    col-offset = <6>;
+};
 
 &kscan0 {
     col-gpios
@@ -18,12 +21,19 @@
         ;
 };
 
+/ {
+    trackball_listener {
+        compatible = "zmk,input-listener";
+        device = <&trackball>;
+    };
+};
+
 &pinctrl {
     spi0_default: spi0_default {
         group1 {
             psels = <NRF_PSEL(SPIM_SCK, 0, 5)>,    // D5 = P0.05
                     <NRF_PSEL(SPIM_MOSI, 0, 4)>,   // D4 = P0.04
-                    <NRF_PSEL(SPIM_MISO, 0, 3)>;   // D3 = P0.03 ← 修正
+                    <NRF_PSEL(SPIM_MISO, 0, 3)>;   // D3 = P0.03 (推定)
         };
     };
 
@@ -31,13 +41,15 @@
         group1 {
             psels = <NRF_PSEL(SPIM_SCK, 0, 5)>,
                     <NRF_PSEL(SPIM_MOSI, 0, 4)>,
-                    <NRF_PSEL(SPIM_MISO, 0, 3)>;   // ← 修正
+                    <NRF_PSEL(SPIM_MISO, 0, 3)>;
             low-power-enable;
         };
     };
 };
 
-&xiao_spi {
+&xiao_serial { status = "disabled"; };
+
+&spi0 {
     status = "okay";
     compatible = "nordic,nrf-spim";
     pinctrl-0 = <&spi0_default>;
@@ -47,28 +59,14 @@
 
     trackball: trackball@0 {
         status = "okay";
-        compatible = "pixart,pmw3610-alt";
+        compatible = "pixart,pmw3610";
         reg = <0>;
         spi-max-frequency = <2000000>;
 
-        // IRQ pin - D2 は P1.11 (GPIO1の11番ピン)
-        irq-gpios = <&gpio1 11 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+        // IRQピンを元の設定に戻す
+        irq-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;  // D2 = P0.02
 
-        evt-type = <INPUT_EV_REL>;
-        x-input-code = <INPUT_REL_X>;
-        y-input-code = <INPUT_REL_Y>;
-
-        invert-y;
+        automouse-layer = <4>;
+        scroll-layers = <5>;
     };
-};
-
-/ {
-    trackball_listener {
-        compatible = "zmk,input-listener";
-        device = <&trackball>;
-    };
-};
-
-&default_transform {
-    col-offset = <6>;
 };

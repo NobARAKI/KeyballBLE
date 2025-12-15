@@ -62,13 +62,11 @@
         compatible = "pixart,pmw3610-alt";
         reg = <0>;
         spi-max-frequency = <2000000>;
-// [追加] 必須プロパティと入力コード定義
+
         evt-type = <INPUT_EV_REL>;
         x-input-code = <INPUT_REL_X>;
         y-input-code = <INPUT_REL_Y>;
-        // IRQピンを元の設定に戻す
         irq-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;  // D2 = P0.02
-        automouse-layer = <4>;
-        scroll-layers = <5>;
+
     };
 };

@@ -17,7 +17,7 @@
         reg = <0>;
         spi-max-frequency = <2000000>;
         /* 新しいドライバ仕様でも irq-gpios を使用します */
-        irq-gpios = <&xiao_d 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+        motion-gpios = <&xiao_d 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
         
         /* * 注意: 古いドライバにあった snipe-layers, scroll-layers 等の機能は
          * overlayではなく、keymapファイル側で設定する仕様に変わりました。

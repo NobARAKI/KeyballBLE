@@ -9,6 +9,11 @@
 #define SCROLL 5
 #define NUM 6
 
+#define SCRL_UP MOVE_Y(ZMK_POINTING_DEFAULT_SCRL_VAL)
+#define SCRL_DOWN MOVE_Y(-ZMK_POINTING_DEFAULT_SCRL_VAL)
+#define SCRL_LEFT MOVE_X(-ZMK_POINTING_DEFAULT_SCRL_VAL)
+#define SCRL_RIGHT MOVE_X(ZMK_POINTING_DEFAULT_SCRL_VAL)
+
 // OS設定を日本語キーボードのまま使用するための変換定義
 #define JP_DQUOTE       AT                // "
 #define JP_AMPERSAND    CARET             // &

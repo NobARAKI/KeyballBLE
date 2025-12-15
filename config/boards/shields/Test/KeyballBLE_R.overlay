@@ -6,6 +6,8 @@
 
 #include <dt-bindings/zmk/matrix_transform.h>
 #include "KeyballBLE.dtsi"
+#include <zephyr/dt-bindings/input/input-event-codes.h>
+
 
 &xiao_spi {
     status = "okay";
@@ -19,10 +21,8 @@
         /* 新しいドライバ仕様でも irq-gpios を使用します */
         motion-gpios = <&xiao_d 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
         
-        /* * 注意: 古いドライバにあった snipe-layers, scroll-layers 等の機能は
-         * overlayではなく、keymapファイル側で設定する仕様に変わりました。
-         * そのため、ここでは記述しません。
-         */
+        zephyr,axis-x = <INPUT_REL_X>;
+        zephyr,axis-y = <INPUT_REL_Y>;
     };
 };
 

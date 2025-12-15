@@ -8,10 +8,18 @@
 #include "KeyballBLE.dtsi"
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 
-
+&kscan0 {
+        col-gpios
+            = <&xiao_d 10 GPIO_ACTIVE_HIGH>
+            , <&xiao_d 9 GPIO_ACTIVE_HIGH>
+            , <&xiao_d 8 GPIO_ACTIVE_HIGH>
+            , <&xiao_d 7 GPIO_ACTIVE_HIGH>
+            , <&gpio0 10 GPIO_ACTIVE_HIGH>
+            ;
+};
 &xiao_spi {
     status = "okay";
-    cs-gpios = <&xiao_d 7 GPIO_ACTIVE_LOW>;
+    cs-gpios = <&xiao_d 9 GPIO_ACTIVE_LOW>;
 
     trackball: trackball@0 {
         status = "okay";
@@ -19,20 +27,13 @@
         reg = <0>;
         spi-max-frequency = <2000000>;
         /* 新しいドライバ仕様でも irq-gpios を使用します */
-        motion-gpios = <&xiao_d 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+        motion-gpios = <&xiao_d 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
         
         zephyr,axis-x = <INPUT_REL_X>;
         zephyr,axis-y = <INPUT_REL_Y>;
     };
 };
-&kscan0 {
-    col-gpios
-        = <&xiao_d 8 GPIO_ACTIVE_HIGH>
-        , <&xiao_d 9 GPIO_ACTIVE_HIGH>
-        , <&xiao_d 10 GPIO_ACTIVE_HIGH>
-        /* 必要な本数分、実際の配線に合わせて記述してください */
-        ;
-};
+
 /* 重要: トラックボールの入力をZMKに伝えるための設定を追加 */
 / {
     trackball_listener {
@@ -42,5 +43,5 @@
 };
 
 &default_transform {
-    col-offset = <5>;
+    col-offset = <6>;
 };

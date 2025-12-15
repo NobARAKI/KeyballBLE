@@ -18,13 +18,12 @@
         ;
 };
 
-// Keyball用にSPIピンを D4, D5 に変更する設定
 &pinctrl {
     spi0_default: spi0_default {
         group1 {
-            psels = <NRF_PSEL(SPIM_SCK, 0, 5)>,   // D5
-                    <NRF_PSEL(SPIM_MOSI, 0, 4)>,  // D4
-                    <NRF_PSEL(SPIM_MISO, 0, 4)>;  // D4 (未使用だが定義)
+            psels = <NRF_PSEL(SPIM_SCK, 0, 5)>,
+                    <NRF_PSEL(SPIM_MOSI, 0, 4)>,
+                    <NRF_PSEL(SPIM_MISO, 0, 4)>;
         };
     };
 
@@ -38,7 +37,6 @@
     };
 };
 
-// SPIの設定
 &xiao_spi {
     status = "okay";
     compatible = "nordic,nrf-spim";
@@ -46,7 +44,6 @@
     pinctrl-1 = <&spi0_sleep>;
     pinctrl-names = "default", "sleep";
 
-    // CSピンは元の定義 (P0.09) に戻す
     cs-gpios = <&gpio0 9 GPIO_ACTIVE_LOW>;
 
     trackball: trackball@0 {
@@ -55,25 +52,30 @@
         reg = <0>;
         spi-max-frequency = <2000000>;
 
-        // ドライバ仕様に合わせて irq-gpios に修正
-        irq-gpios = <&xiao_d 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+        /* 最新仕様: irq-gpios ではなく motion-gpios を使用 */
+        motion-gpios = <&xiao_d 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
 
-        // Input Subsystem用のマッピング
+        /* トラックボール設定 */
+        res-cpi = <1000>; /* CPI設定 (configファイルから移動) */
+        smart-mode;       /* スマートアルゴリズム有効化 */
+        scroll-layers = <5>;
+        automouse-layer = <4>;
+
+        /* Input Subsystem設定 */
         zephyr,axis-x = <INPUT_REL_X>;
         zephyr,axis-y = <INPUT_REL_Y>;
     };
 };
 
-// ZMK Input Listenerの設定
 / {
     trackball_listener {
         compatible = "zmk,input-listener";
         device = <&trackball>;
 
-        // 必要に応じて感度調整などを行う場合はここに追記
-        // xy-swap;
-        // y-invert;
-        // x-invert;
+        /* XY軸の入れ替えや反転が必要な場合はここで設定 */
+        /* xy-swap; */
+        /* x-invert; */
+        y-invert; /* Keyballは通常Y反転が必要な場合が多い */
     };
 };
 

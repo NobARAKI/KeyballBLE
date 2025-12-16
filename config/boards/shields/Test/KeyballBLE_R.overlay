@@ -72,8 +72,8 @@
         x-input-code = <INPUT_REL_X>;
         y-input-code = <INPUT_REL_Y>;
         irq-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;  // D2 = P0.02
-        automouse-layer = <4>;
-        scroll-layers = <5>;
+        //automouse-layer = <4>;
+        //scroll-layers = <5>;
 //irq-gpios = <&gpio0 9 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;  // D2 = P0.09
     };
 };

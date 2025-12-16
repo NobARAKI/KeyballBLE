@@ -46,6 +46,7 @@
 };
 
 / {
+/*
     #if defined(SHIELD_KEYBALLBLE_R)
     trackball_listener {
           compatible = "zmk,input-behavior-listener";
@@ -84,8 +85,23 @@
           y-invert;
           // input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>;
       };
+    #endif*/
+    /* ポインティングデバイスの設定 */
+        #if defined(SHIELD_KEYBALLBLE_R)
+        input_configs {
+            compatible = "zmk,input-configs";
 
-#endif
+            trackball_config {
+                device = <&trackball_listener>;
+                input-processors = <&zip_xy_transform (-1) 0 0 0 0 0>;
+                /* マウスレイヤーに自動切り替え */
+                automouse-layer = <4>;  // MOUSE layer
+                automouse-timeout-ms = <600>;
+                /* スクロールレイヤー */
+                scroll-layers = <5>;  // SCROLL layer
+            };
+        };
+        #endif
     combos {
         compatible = "zmk,combos";
 

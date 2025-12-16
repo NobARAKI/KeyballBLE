@@ -52,11 +52,10 @@
 
         trackball_config {
             device = <&trackball_listener>;
-            input-processors = <&zip_xy_transform (-1) 0 0 1 0 0>;
+            input-processors = <&zip_xy_transform (-1) 0 0 (-1) 0 0>
             /* マウスレイヤーに自動切り替え */
             automouse-layer = <4>;  // MOUSE layer
             automouse-timeout-ms = <600>;
-
             /* スクロールレイヤー */
             scroll-layers = <5>;  // SCROLL layer
         };
@@ -153,8 +152,8 @@
 
         SCROLL {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans                      &trans  &trans     &mkp MCLK  &trans     &mkp RCLK
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &mkp MB4  &mkp LCLK  &mkp LCLK  &mkp RCLK  &mkp MB5
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
             >;
@@ -172,7 +171,7 @@
         SymbolNumber {
             bindings = <
 &kp JP_QUOTE     &kp JP_LPAREN  &kp JP_RPAREN     &kp JP_LBRACE  &kp JP_RBRACE                        &kp JP_PLUS   &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp JP_ASTERISK
-&kp DOLLAR       &kp PERCENT    &kp JP_AMPERSAND  &kp JP_PIPE    &kp JP_AT      &trans      &kp JP_EQUAL  &kp MINUS     &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp SLASH
+&kp DOLLAR       &kp PERCENT    &kp JP_AMPERSAND  &kp JP_YEN    &kp JP_AT      &trans      &kp JP_EQUAL  &kp MINUS     &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp SLASH
 &kp EXCLAMATION  &kp JP_DQUOTE  &kp HASH          &kp SEMICOLON  &kp JP_COLON   &trans      &trans        &kp NUMBER_0  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp JP_UNDERSCORE
 &trans           &trans         &trans            &trans         &trans         &trans      &trans        &trans                                                  &trans
             >;

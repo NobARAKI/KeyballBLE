@@ -58,9 +58,10 @@
           scale-divisor = <1>;
 
           /* Y軸反転の設定 */
-          /* ZMK標準のマクロを使用することを強く推奨します */
+          y-invert;
+          /* ZMK標準のマクロを使用することを強く推奨します
           input-processors = <&zip_temp_layer 4 600>, <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>;
-
+          */
           /* もし数値で書く必要がある場合（マクロが効かない場合）:
              input-processors = <&zip_temp_layer 4 600>, <&zip_xy_transform 1 0 0 (-1) 0 0>;
           */
@@ -80,6 +81,7 @@
           scale-divisor = <4>; /* スクロール速度の調整（値を増やすと遅くなる） */
 
           /* スクロール方向も反転したい場合はここで transform を追加 */
+          y-invert;
           // input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>;
       };
 

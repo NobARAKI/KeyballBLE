@@ -74,7 +74,7 @@
         invert-y;
         irq-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;  // D2 = P0.02
         //irq-gpios = <&gpio0 9 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;  // D2 = P0.09
-        //automouse-layer = <4>;
-        //scroll-layers = <5>;
+        automouse-layer = <4>;
+        scroll-layers = <5>;
     };
 };

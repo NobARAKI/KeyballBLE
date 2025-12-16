@@ -46,7 +46,7 @@
 };
 
 / {
-    #if defined(SHIELD_KEYBALLBLE_R)
+
     trackball_listener {
           compatible = "zmk,input-behavior-listener";
           device = <&trackball>;
@@ -82,8 +82,6 @@
           /* スクロール方向も反転したい場合はここで transform を追加 */
           // input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>;
       };
-
-#endif
     combos {
         compatible = "zmk,combos";
 

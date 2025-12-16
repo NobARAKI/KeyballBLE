@@ -21,12 +21,13 @@
         ;
 };
 
-/ {
-    trackball_listener: trackball_listener {
-        compatible = "zmk,input-listener";
-        device = <&trackball>;
-    };
-};
+/* 以下のブロックを削除またはコメントアウト */
+// / {
+//     trackball_listener: trackball_listener {
+//         compatible = "zmk,input-listener";
+//         device = <&trackball>;
+//     };
+// };
 
 &pinctrl {
     spi0_default: spi0_default {

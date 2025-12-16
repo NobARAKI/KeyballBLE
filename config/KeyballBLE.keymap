@@ -46,7 +46,46 @@
 };
 
 / {
+/*
+    #if defined(SHIELD_KEYBALLBLE_R)
+    trackball_listener {
+          compatible = "zmk,input-behavior-listener";
+          device = <&trackball>;
+          layers = <0 1 2 3 6 7>; /* マウス移動を有効にするレイヤーを指定 */
+          evt-type = <INPUT_EV_REL>;
+          x-input-code = <INPUT_REL_X>;
+          y-input-code = <INPUT_REL_Y>;
+          scale-multiplier = <1>;
+          scale-divisor = <1>;
 
+          /* Y軸反転の設定 */
+          y-invert;
+          /* ZMK標準のマクロを使用することを強く推奨します
+          input-processors = <&zip_temp_layer 4 600>, <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>;
+          */
+          /* もし数値で書く必要がある場合（マクロが効かない場合）:
+             input-processors = <&zip_temp_layer 4 600>, <&zip_xy_transform 1 0 0 (-1) 0 0>;
+          */
+      };
+
+      /* スクロールレイヤー用設定（レイヤー5のときスクロール動作） */
+      trackball_scroll_listener {
+          compatible = "zmk,input-behavior-listener";
+          device = <&trackball>;
+          layers = <5>; /* SCROLLレイヤー */
+          evt-type = <INPUT_EV_REL>;
+
+          /* 移動量(X/Y)をスクロールイベント(WHEEL/HWHEEL)に変換して送信 */
+          x-input-code = <INPUT_REL_HWHEEL>; /* 横スクロール */
+          y-input-code = <INPUT_REL_WHEEL>;  /* 縦スクロール */
+          scale-multiplier = <1>;
+          scale-divisor = <4>; /* スクロール速度の調整（値を増やすと遅くなる） */
+
+          /* スクロール方向も反転したい場合はここで transform を追加 */
+          y-invert;
+          // input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>;
+      };
+    #endif*/
     /* ポインティングデバイスの設定 */
         #if defined(SHIELD_KEYBALLBLE_R)
         input_configs {

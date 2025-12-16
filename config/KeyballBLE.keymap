@@ -53,7 +53,7 @@
         trackball_config {
             device = <&trackball>;
             /* X軸はそのまま、Y軸を反転 */
-            input-processors = <&zip_xy_transform (0)>;
+            input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT)>;
 
             //input-processors = <&zip_xy_transform 1 0 (-1) 0 0 0>;
             /* マウスレイヤーに自動切り替え */

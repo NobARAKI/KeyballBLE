@@ -170,7 +170,7 @@
 
         SymbolNumber {
             bindings = <
-&kp JP_QUOTE     &kp JP_LPAREN  &kp JP_RPAREN     &kp JP_LBRACE  &kp JP_RBRACE                        &kp JP_PLUS   &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp JP_ASTERISK
+&kp JP_QUOTE     &kp JP_LPAREN  &kp JP_RPAREN     &kp JP_LBRACKET  &kp JP_RBRACKET                        &kp JP_PLUS   &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp JP_ASTERISK
 &kp DOLLAR       &kp PERCENT    &kp JP_AMPERSAND  &kp JP_YEN    &kp JP_AT      &trans      &kp JP_EQUAL  &kp MINUS     &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp SLASH
 &kp EXCLAMATION  &kp JP_DQUOTE  &kp HASH          &kp SEMICOLON  &kp JP_COLON   &trans      &trans        &kp NUMBER_0  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp JP_UNDERSCORE
 &trans           &trans         &trans            &trans         &trans         &trans      &trans        &trans                                                  &trans

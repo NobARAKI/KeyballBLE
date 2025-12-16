@@ -50,7 +50,7 @@
     #if defined(SHIELD_KEYBALLBLE_R)
     &trackball_listener {
         /* 通常時の動作: 入力をそのまま通す（数値を変更して速度調整可能。例: <&zip_xy_scaler 2 1> で2倍速） */
-        input-processors = <&zip_xy_scaler 1 1>;
+        input-processors = <&zip_xy_scaler 2 1>;
 
         /* レイヤー5 (SCROLL) が有効な時の動作: トラックボール操作をスクロールに変換 */
         scroll_layer {

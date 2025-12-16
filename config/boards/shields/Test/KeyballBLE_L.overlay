@@ -1,10 +1,12 @@
 /* KeyballBLE_L.overlay */
 #include "KeyballBLE.dtsi"
 
+/* 左手側：エンコーダを有効化 */
 &left_encoder {
     status = "okay";
 };
 
+/* 左手側：トラックボールは存在しないので無効化（D0ピンをエンコーダに譲るため必須） */
 &trackball {
     status = "disabled";
 };

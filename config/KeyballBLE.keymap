@@ -47,6 +47,7 @@
 
 / {
 /* ポインティングデバイスの設定 */
+#if defined(SHIELD_KEYBALLBLE_R)
     input_configs {
         compatible = "zmk,input-configs";
 

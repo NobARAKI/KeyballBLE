@@ -26,7 +26,16 @@
     trackball_listener: trackball_listener {
         compatible = "zmk,input-listener";
         device = <&trackball>;
-        input-processors = <&zip_xy_scaler 1 1>;
+        input-processors
+                    /* 1. 感度調節 (zip_xy_scaler 分子 分母) */
+                    /* 例: <&zip_xy_scaler 2 1> (2倍速), <&zip_xy_scaler 1 2> (半分) */
+                    /* 現在: 等倍 (1/1) */
+                    = <&zip_xy_scaler 3 2>
+
+                    /* 2. オートマウスレイヤー (zip_temp_layer レイヤー番号 タイムアウトms) */
+                    /* トラックボールを動かすと レイヤー4 (MOUSE) に切り替わり、 */
+                    /* 600ms 操作しないと戻ります */
+                    , <&zip_temp_layer 4 600>;
 
         /* レイヤー5 (SCROLL) の時の動作 */
         scroll-layer {

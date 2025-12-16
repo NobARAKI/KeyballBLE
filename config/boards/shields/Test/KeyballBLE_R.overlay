@@ -33,8 +33,9 @@
         group1 {
             psels = <NRF_PSEL(SPIM_SCK, 0, 5)>,    // D5 = P0.05
                     <NRF_PSEL(SPIM_MOSI, 0, 4)>,   // D4 = P0.04
+                    <NRF_PSEL(SPIM_MISO, 0, 4)>;
                     //<NRF_PSEL(SPIM_MISO, 0, 3)>;   // D3 = P0.03 (推定)
-                    <NRF_PSEL(SPIM_MISO, 1, 11)>;  // D3 = P1.11
+                    //<NRF_PSEL(SPIM_MISO, 1, 11)>;  // D3 = P1.11
         };
     };
 
@@ -42,8 +43,9 @@
         group1 {
             psels = <NRF_PSEL(SPIM_SCK, 0, 5)>,
                     <NRF_PSEL(SPIM_MOSI, 0, 4)>,
+                    <NRF_PSEL(SPIM_MISO, 0, 4)>;
                      // <NRF_PSEL(SPIM_MISO, 0, 3)>;
-                    <NRF_PSEL(SPIM_MISO, 1, 11)>;
+                     // <<NRF_PSEL(SPIM_MISO, 1, 11)>;
             low-power-enable;
         };
     };
@@ -57,10 +59,11 @@
     pinctrl-0 = <&spi0_default>;
     pinctrl-1 = <&spi0_sleep>;
     pinctrl-names = "default", "sleep";
-    //cs-gpios = <&gpio0 9 GPIO_ACTIVE_LOW>;  // D9 = P0.09
-    cs-gpios = <&gpio0 10 GPIO_ACTIVE_LOW>;  // D9 = P0.10
+    cs-gpios = <&gpio0 9 GPIO_ACTIVE_LOW>;  // D9 = P0.09
+    //cs-gpios = <&gpio0 10 GPIO_ACTIVE_LOW>;  // D9 = P0.10
     trackball: trackball@0 {
         status = "okay";
+        //compatible = "pixart,pmw3610";
         compatible = "pixart,pmw3610-alt";
         reg = <0>;
         spi-max-frequency = <2000000>;
@@ -69,6 +72,9 @@
         x-input-code = <INPUT_REL_X>;
         y-input-code = <INPUT_REL_Y>;
         irq-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;  // D2 = P0.02
-        //irq-gpios = <&gpio0 9 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;  // D2 = P0.09
+                automouse-layer = <4>;
+                scroll-layers = <5>;
+
+                //irq-gpios = <&gpio0 9 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;  // D2 = P0.09
     };
 };

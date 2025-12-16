@@ -46,6 +46,22 @@
 };
 
 / {
+/* ポインティングデバイスの設定 */
+    input_configs {
+        compatible = "zmk,input-configs";
+
+        trackball_config {
+            device = <&trackball_listener>;
+
+            /* マウスレイヤーに自動切り替え */
+            automouse-layer = <4>;  // MOUSE layer
+            automouse-timeout-ms = <600>;
+
+            /* スクロールレイヤー */
+            scroll-layers = <5>;  // SCROLL layer
+        };
+    };
+
     combos {
         compatible = "zmk,combos";
 

@@ -63,7 +63,7 @@
     //cs-gpios = <&gpio0 10 GPIO_ACTIVE_LOW>;  // D9 = P0.10
     trackball: trackball@0 {
         status = "okay";
-        //compatible = "pixart,pmw3610";
+        //compatible = "pixart,pmw3610";//ビルドエラーになる。
         compatible = "pixart,pmw3610-alt";
         reg = <0>;
         spi-max-frequency = <2000000>;
@@ -71,6 +71,9 @@
         evt-type = <INPUT_EV_REL>;
         x-input-code = <INPUT_REL_X>;
         y-input-code = <INPUT_REL_Y>;
+
+        y-invert;
+
         irq-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;  // D2 = P0.02
         //irq-gpios = <&gpio0 9 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;  // D2 = P0.09
         //automouse-layer = <4>;

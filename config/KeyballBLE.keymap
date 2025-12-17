@@ -102,8 +102,8 @@
             bindings = <
 &trans  &trans  &trans  &trans  &trans                       &kp F10  &kp F7             &kp F8  &kp F9  &kp JP_CARET
 &trans  &trans  &trans  &trans  &trans  &trans      &kp F13  &kp F11  &kp F4             &kp F5  &kp F6  &kp JP_TILDE
-&trans  &trans  &trans  &trans  &trans  &trans      &trans   &kp F12  &kp JP_UNDERSCORE  &kp F2  &kp F3  &kp JP_UNDERSCORE
-&trans  &trans  &trans  &trans  &trans  &trans      &trans   &trans                                      &kp JP_TILDE
+&trans  &trans  &trans  &trans  &trans  &trans      &trans   &kp F12  &kp JP_UNDERSCORE  &kp F2  &kp F3  &kp PSCRN
+&trans  &trans  &trans  &trans  &trans  &trans      &trans   &trans                                      &kp INS
             >;
         };
 

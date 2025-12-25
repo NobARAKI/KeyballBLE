@@ -61,7 +61,7 @@
         // QWERTY⇔大西配列の切り替えコンボ（例：両親指の外側キーを同時押し）
         toggle_layout {
             bindings = <&tog ONISHI>;
-            key-positions = <10 21>;  //
+            key-positions = <0 1>;  //
         };
       };
 

@@ -94,8 +94,8 @@
           onishi_layer {
               bindings = <
   &lt LAYER6 Q       &kp L         &kp U         &kp COMMA          &kp DOT                                                        &kp F        &kp W  &kp R      &kp Y    &kp P
-  &kp A              &kp I         &kp E         &kp O              &kp MINUS            &mkp RCLK           &kp RCTRL             &kp K        &kp T  &kp N      &kp S    &lt SCROLL H
-  &mt LEFT_SHIFT Z   &kp X         &kp C         &kp V              &kp B                &mkp LCLK           &kp RIGHT_SHIFT       &kp G        &kp D  &kp M      &kp J    &kp SLASH
+  &kp E              &kp I         &kp A         &kp O              &kp MINUS            &mkp RCLK           &kp RCTRL             &kp K        &kp T  &kp N      &kp S    &lt SCROLL H
+  &mt LEFT_SHIFT Z   &kp X         &kp C         &kp V              &kp SEMICOLON        &mkp LCLK           &kp RIGHT_SHIFT       &kp G        &kp D  &kp M      &kp J    &kp B
   &kp LCTRL          &kp LEFT_WIN  &kp LEFT_ALT  &lt SYMBOL INT_MUHENKAN  &mt LEFT_SHIFT SPACE   &lt ARROW INT_HENKAN  &kp BACKSPACE  &lt FUNCTION ENTER                    &kp DEL
               >;
               sensor-bindings = <&ROTATE SCRL_DOWN SCRL_UP>;
@@ -135,10 +135,10 @@
           // Layer 5: SCROLL
           scroll_layer {
               bindings = <
-  &trans  &trans  &trans  &trans  &trans                      &trans    &trans     &mkp MCLK  &trans     &mkp RCLK
-  &trans  &trans  &trans  &trans  &trans  &trans      &trans  &mkp MB4  &mkp LCLK  &mkp LCLK  &mkp RCLK  &mkp MB5
-  &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans    &trans     &trans     &trans     &trans
-  &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                     &trans
+&trans    &trans     &trans     &trans     &trans                           &trans   &trans    &trans     &trans      &trans
+&mkp MB4  &mkp LCLK  &mkp MCLK  &mkp RCLK  &mkp MB5  &mkp RCLK      &trans  &trans   &mkp MB4  &mkp MB5   &mkp RCLK   &trans
+&trans    &trans     &trans     &trans     &trans    &mkp LCLK      &trans  &trans   &trans    &mkp LCLK  &mkp MCLK   &trans
+&trans    &trans     &trans     &trans     &trans    &trans         &trans  &trans                                    &trans
               >;
           };
 
